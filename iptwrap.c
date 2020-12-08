@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
 	extern int optind;
 	int c;
 	int chainopt = 0, ipadd = 0, ipdel = 0, iplist = 0;
-	int status;
 	int found = 0;
 	FILE *fp;
 	char *p;
@@ -114,7 +113,7 @@ int main(int argc, char *argv[])
 		argv[6] = "ACCEPT";
 		argv[7] = NULL;
 
-		status = cmd(argv);
+		return cmd(argv);
 	} else if (iplist) {
 		argv[0] = "/sbin/iptables";
 		argv[1] = "-nL";
